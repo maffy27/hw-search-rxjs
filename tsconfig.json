@@ -72,6 +72,6 @@
     "noEmitOnError": true
   },
   "include": [
-    "docs/index.ts"
+    "src/index.ts"
   ]
 }
