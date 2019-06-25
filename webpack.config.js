@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     mode: 'none',
-    entry: './src',
+    entry: './docs',
     output: {
         filename: "[name].bundle.js",
         path: path.resolve(__dirname, 'dist')
@@ -25,7 +25,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./src/index.html"
+            template: "./docs/index.html"
         })
     ]
 }
