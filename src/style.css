@@ -1,7 +1,75 @@
-.search_block {
-    width: 500px;
-    height: 100%;
-    background-color: grey;
-    border: 1px solid black;
 
+.search_input {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: 25px;
+    padding: 5px;
+    color: black;
+    outline: none;
+}
+
+.search_input::-webkit-input-placeholder {
+    color: gainsboro;
+    opacity: 1; transition: opacity 0.3s ease;
+}
+.search_input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+
+.search_input:focus {
+    border-color: darkseagreen;
+}
+
+.main-block{
+    width: 700px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.result-item {
+    height: 80px;
+    border-bottom: 1px solid lightgray;
+}
+
+.result-item h3 a{
+    color: #0366d6;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.result-item h3 a:hover{
+    text-decoration: underline;
+}
+
+.result-item p {
+    width: 600px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.no-result-item {
+    text-align: center;
+}
+
+
+.loading {
+    height: 0;
+    width: 0;
+    padding: 15px;
+    border: 6px solid #ccc;
+    border-right-color: #888;
+    border-radius: 22px;
+    -webkit-animation: rotate 1s infinite linear;
+    /* left, top and position just for the demo! */
+    margin: 20px auto;
+}
+
+@-webkit-keyframes rotate {
+    /* 100% keyframe for  clockwise.
+       use 0% instead for anticlockwise */
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
 }

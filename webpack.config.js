@@ -1,22 +1,20 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-//тзь const LinkTypePlugin = require('html-webpack-link-type-plugin').HtmlWebpackLinkTypePlugin;
-//const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
-    mode: 'none',
-    entry: './src',
+    mode: "none",
+    entry: "./src",
     output: {
         filename: "[name].bundle.js",
-        path: path.resolve(__dirname, 'docs')
+        path: path.resolve(__dirname, "docs")
     },
     devtool: "source-map",
     resolve: {
-        extensions: ['.ts', '.js', '.json', '.css']
+        extensions: [".ts", ".js", ".json", ".css"]
     },
     module: {
         rules: [
-            { test: /\.css$/, loader: 'typings-for-css-modules?modules' },
-            {test: /\.ts$/, loader: "ts-loader"}
+            { test: /\.ts$/, loader: "ts-loader" },
+            { test: /\.css$/, use: ["style-loader", "css-loader"] }
         ]
     },
     plugins: [
@@ -24,4 +22,4 @@ module.exports = {
             template: "./src/index.html"
         })
     ]
-}
+};
